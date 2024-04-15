@@ -13,3 +13,7 @@ and get the ip address from <br>
 put the output of this command into the last link from the command  <br>
 !streamlit run appV2.py & npx localtunnel --port 8501 <br>
 
+
+<h2>Step Four</h2>
+this will open the streamlit website <br>
+choose a book and ask away in the chat <br>
