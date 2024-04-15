@@ -1,5 +1,5 @@
 <h1> Digram of the project <h1>
-![WhatsApp Image 2024-04-07 at 13 27 09_92a90019](https://github.com/shadowTEM/Book-Expert-System/assets/89928048/d8aa4dd7-9ac5-4e0c-875f-53a918a13eca)
+![langchain](https://github.com/shadowTEM/Book-Expert-System/assets/89928048/3b772579-10fb-483d-b331-156eaa1d6ffe)
 
 <h1> Step One </h1>
 Put all your files on a colab enviroment or local enviroment
