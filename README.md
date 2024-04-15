@@ -10,6 +10,6 @@ in a .env file
 run the notebook  <br>
 and get the ip address from <br>
 !wget -q -O - ipv4.icanhazip.com <br>
-put the output of this command into the last link from the  <br>
+put the output of this command into the last link from the command  <br>
 !streamlit run appV2.py & npx localtunnel --port 8501 <br>
 
