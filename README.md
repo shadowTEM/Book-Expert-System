@@ -1,5 +1,4 @@
 <h1> Digram of the project <h1>
-![langchain](https://github.com/shadowTEM/Book-Expert-System/assets/89928048/3b772579-10fb-483d-b331-156eaa1d6ffe)
 
 <h1> Step One </h1>
 Put all your files on a colab enviroment or local enviroment
