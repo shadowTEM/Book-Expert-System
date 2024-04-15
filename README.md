@@ -17,3 +17,13 @@ put the output of this command into the last link from the command  <br>
 <h2>Step Four</h2>
 this will open the streamlit website <br>
 choose a book and ask away in the chat <br>
+
+
+
+configuration 
+if you want to add a new pdf add
+# pdf_docs = get_pdf_splits(folder path)
+
+# embed_index(doc_list=pdf_docs,
+#             embed_fn=embeddings,
+#             index_store='48_laws')
