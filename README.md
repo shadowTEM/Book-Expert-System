@@ -20,7 +20,7 @@ choose a book and ask away in the chat <br>
 
 
 
-configuration 
+<h2> configuration </h2> <br>
 
 if you want to add a new pdf add<br>
 pdf_docs = get_pdf_splits(folder path)<br>
