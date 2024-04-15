@@ -1,12 +1,12 @@
-<h2> Step One </h2>
+<h1> Step One </h1>
 Put all your files on a colab enviroment or local enviroment
 
-<h2> Step Two </h2>
+<h1> Step Two </h1>
 Put your hugging face api key as follows 
 HUGGINGFACEHUB_API_TOKEN="Api key"
 in a .env file
 
-<h2> Step Three </h2>
+<h1> Step Three </h1>
 run the notebook  <br>
 and get the ip address from <br>
 !wget -q -O - ipv4.icanhazip.com <br>
@@ -14,13 +14,13 @@ put the output of this command into the last link from the command  <br>
 !streamlit run appV2.py & npx localtunnel --port 8501 <br>
 
 
-<h2>Step Four</h2>
+<h1>Step Four</h1>
 this will open the streamlit website <br>
 choose a book and ask away in the chat <br>
 
 
 
-<h2> configuration </h2>
+<h1> configuration </h1>
 <h3>if you want to add a new pdf add </h3>
 
 pdf_docs = get_pdf_splits(folder path)<br>
