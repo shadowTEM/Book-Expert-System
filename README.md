@@ -21,13 +21,14 @@ choose a book and ask away in the chat <br>
 
 
 <h1> configuration </h1>
-<h3>if you want to add a new pdf add </h3>
+<h2>if you want to add a new pdf add </h2>
 
 pdf_docs = get_pdf_splits(folder path)<br>
 embed_index(doc_list=pdf_docs,<br>
              embed_fn=embeddings,<br>
             index_store='new index')<br>
 
-if you want to change the LLM <br>
+<h2>if you want to change the LLM </h2>
 you have to go to appV2 and go to get_conversation_chain(vectorstore) function <br>
+and change the LLM variable to your desired LLM
 
