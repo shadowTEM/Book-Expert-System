@@ -1,3 +1,5 @@
+<h1> digram of the project <h1>
+  
 <h1> Step One </h1>
 Put all your files on a colab enviroment or local enviroment
 
