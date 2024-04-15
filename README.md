@@ -6,3 +6,10 @@ Put your hugging face api key as follows
 HUGGINGFACEHUB_API_TOKEN="Api key"
 in a .env file
 
+<h2> Step Three </h2>
+run the notebook 
+and get the ip address from
+!wget -q -O - ipv4.icanhazip.com
+put the output of this command into the last link from the 
+!streamlit run appV2.py & npx localtunnel --port 8501
+
