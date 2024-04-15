@@ -21,9 +21,13 @@ choose a book and ask away in the chat <br>
 
 
 configuration 
-if you want to add a new pdf add
-# pdf_docs = get_pdf_splits(folder path)
 
-# embed_index(doc_list=pdf_docs,
-#             embed_fn=embeddings,
-#             index_store='48_laws')
+if you want to add a new pdf add<br>
+pdf_docs = get_pdf_splits(folder path)<br>
+embed_index(doc_list=pdf_docs,<br>
+             embed_fn=embeddings,<br>
+            index_store='new index')<br>
+
+if you want to change the LLM <br>
+you have to go to appV2 and go to get_conversation_chain(vectorstore) function <br>
+
