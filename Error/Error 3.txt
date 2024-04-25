@@ -1,0 +1,3 @@
+for some reason it doesn't defualt allow pickel loading so we need to add
+allow_dangerous_deserialization=True
+in Faiss_load so it get fixed 

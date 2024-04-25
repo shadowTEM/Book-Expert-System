@@ -1,0 +1,4 @@
+this error when you do more than 5 - 7 message at one time
+
+fix 
+don't write more than 5- 7 message at the same time or increase the token size

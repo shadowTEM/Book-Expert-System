@@ -1,0 +1,7 @@
+the answer is super long and it take time to load the answer 
+
+
+solution
+added a string split to the output answer with this line of code in handle_userinput(user_question) function
+            st.write(bot_template.replace(
+                "{{MSG}}", message.content[message.content.rfind("Helpful Answer"):]), unsafe_allow_html=True)
