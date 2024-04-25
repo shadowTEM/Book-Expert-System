@@ -1,8 +1,7 @@
 import streamlit as st
 from dotenv import load_dotenv
-from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings,HuggingFaceEmbeddings
+from langchain.embeddings import HuggingFaceInstructEmbeddings,HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
@@ -11,13 +10,6 @@ from htmlTemplates import css, bot_template, user_template
 from langchain.llms import HuggingFaceHub
 import os
 
-def get_pdf_text(pdf_docs):
-    text = ""
-    for pdf in pdf_docs:
-        pdf_reader = PdfReader(pdf)
-        for page in pdf_reader.pages:
-            text += page.extract_text()
-    return text
 
 
 def get_text_chunks(text):
@@ -57,14 +49,15 @@ def embed_index(doc_list, embed_fn, index_store):
         print("New store created...")
 
 def load_vectorstore(Num):
+    e = HuggingFaceEmbeddings(model_name="hkunlp/instructor-xl")
     if Num==0:
         index = FAISS.load_local(folder_path='new_index', 
-                                    embeddings=HuggingFaceEmbeddings(model_name="hkunlp/instructor-xl")
-                                    ,allow_dangerous_deserialization=True)
+                                    embeddings=e
+                                    )
     elif Num==1:
         index = FAISS.load_local(folder_path='48_laws', 
-                                    embeddings=HuggingFaceEmbeddings(model_name="hkunlp/instructor-xl")
-                                    ,allow_dangerous_deserialization=True)
+                                    embeddings=e
+                                    )
     # elif Num==2:
     #     index = FAISS.load_local(folder_path='Human_Nature', 
     #                                 embeddings=HuggingFaceEmbeddings(model_name="hkunlp/instructor-xl")
@@ -73,7 +66,7 @@ def load_vectorstore(Num):
 
 def get_conversation_chain(vectorstore):
     # llm = ChatOpenAI()
-    llm = HuggingFaceHub(repo_id = "mistralai/Mistral-7B-Instruct-v0.2", model_kwargs={"temperature":0.5, "max_length":1024})
+    llm = HuggingFaceHub(repo_id = "mistralai/Mistral-7B-Instruct-v0.2", model_kwargs={"temperature":0.4, "max_length":1024})
 
     memory = ConversationBufferMemory(
         memory_key='chat_history', return_messages=True)
@@ -86,17 +79,17 @@ def get_conversation_chain(vectorstore):
 
 
 def handle_userinput(user_question):
+    print(user_question)
     response = st.session_state.conversation({'question': user_question})
     st.session_state.chat_history = response['chat_history']
 
     for i, message in enumerate(st.session_state.chat_history):
         if i % 2 == 0:
             st.write(user_template.replace(
-                "{{MSG}}",  message.content), unsafe_allow_html=True)
+                "{{MSG}}", message.content), unsafe_allow_html=True)
         else:
             st.write(bot_template.replace(
-                "{{MSG}}",message.content[message.content.rfind("Helpful Answer"):]), unsafe_allow_html=True)
-
+                "{{MSG}}", message.content[message.content.rfind("Helpful Answer"):]), unsafe_allow_html=True)
 
 def main():
     load_dotenv()
@@ -120,6 +113,8 @@ def main():
             with st.spinner("Processing"):
                 # create vector store
                 vectorstore = load_vectorstore(0)
+                st.session_state.conversation = get_conversation_chain(
+                    vectorstore)
                 
 
         if st.button("48 laws"):
