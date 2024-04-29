@@ -21,7 +21,8 @@ put the output of this command into the last link from the command  <br>
 
 <h1>Step Four</h1>
 this will open the streamlit website <br>
-choose a book and ask away in the chat <br>
+click process after the preporcessing loads <br>
+start chating <br>
 
 
 
