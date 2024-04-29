@@ -34,6 +34,6 @@ embed_index(doc_list=pdf_docs,<br>
             index_store='new index')<br>
 
 <h2>if you want to change the LLM </h2>
-you have to go to appV2 and go to get_conversation_chain(vectorstore) function <br>
+you have to go to appV3 and go to get_conversation_chain(vectorstore) function <br>
 and change the LLM variable to your desired LLM
 
