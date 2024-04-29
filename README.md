@@ -8,7 +8,8 @@ Put all your files on a colab enviroment or local enviroment
 <h1> Step Two </h1>
 Put your hugging face api key as follows 
 HUGGINGFACEHUB_API_TOKEN="Api key"
-in a .env file
+in a .env file or
+write 'HUGGINGFACEHUB_API_TOKEN' as name and write the api key in colab secret key
 
 <h1> Step Three </h1>
 run the notebook  <br>
